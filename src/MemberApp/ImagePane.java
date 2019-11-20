@@ -1,10 +1,11 @@
-package frame;
+package MemberApp;
 
 import java.awt.Image;
 
 public class ImagePane {
 
 	public ImagePane(Image image) {
+		
 		// TODO Auto-generated constructor stub
 	}
 

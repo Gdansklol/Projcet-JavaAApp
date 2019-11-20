@@ -1,7 +1,7 @@
-package frame;
-
+package MemberApp;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Window;
@@ -10,22 +10,21 @@ import java.awt.event.ActionListener;
 import java.util.Arrays;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-
-import java.awt.Font;
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
-import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
-public class AppCustomer10 {
+// @author Båmi Lee
+
+public class AppLogin {
 
 	private JFrame frame;
 	private JTextField id;
@@ -36,12 +35,15 @@ public class AppCustomer10 {
 
 	/**
 	 * Launch the application.
+	 * 
+	 * @param args
 	 */
+	 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AppCustomer10 window = new AppCustomer10();
+					AppLogin window = new AppLogin();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -53,7 +55,7 @@ public class AppCustomer10 {
 	/**
 	 * Create the application.
 	 */
-	public AppCustomer10() {
+	public AppLogin() {
 		initialize();
 	}
 
@@ -64,11 +66,12 @@ public class AppCustomer10 {
 		frame = new JFrame();
 		frame.getContentPane().setFont(new Font("Sitka Small", Font.ITALIC, 30));
 		frame.getContentPane().setLayout(null);
-		ImagePane welcomePanel = new ImagePane(new ImageIcon("C:/Users/swede/eclipse-workspace/Swing%20Lesson%20ex/image/tablet.jpg").getImage());
+		ImagePane welcomePanel = new ImagePane(new ImageIcon("C:/Users/swede/eclipse-workspace/Swing Lesson ex/image/tablet.jpg").getImage());
 		welcomePanel.setSize(930,730);
 		//frame.getContentPane().add(welcomePanel);
 		
 		JLabel lblNewLabel = new JLabel("Log In");
+			
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
 		lblNewLabel.setBounds(368, 186, 290, 129);
@@ -102,7 +105,7 @@ public class AppCustomer10 {
 		btnLogIn.setBounds(411, 493, 249, 113);
 		frame.getContentPane().add(btnLogIn);
 		frame.setSize(940,720);
-		//frame.setVisible(false);
+	  //frame.setVisible(false);
 		frame.setLocationRelativeTo(null); // frame placeras i mitten
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -122,8 +125,14 @@ public class AppCustomer10 {
 				}
 				
 			}
-		
-		
+
+			public Window getMainPanel() {
+				return mainPanel;
+			}
+
+			public void setMainPanel(Window mainPanel) {
+				this.mainPanel = mainPanel;
+			}
 		});
         welcomePanel.add(butLogIn);
 		frame.setJMenuBar( menuBar());
@@ -131,7 +140,10 @@ public class AppCustomer10 {
 		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	 public JMenuBar menuBar() {
+	 /**
+	 * @return
+	 */
+	public JMenuBar menuBar() {
 		 JMenuBar bar = new JMenuBar();
 		 JMenu fileMenu = new JMenu("File");
   	   JMenu aboutMenu = new JMenu("About");
@@ -162,8 +174,25 @@ public class AppCustomer10 {
   	   
   	   return bar;
      }
+
+	public Window getWelcomePanel() {
+		return welcomePanel;
+	}
+
+	public void setWelcomePanel(Window welcomePanel) {
+		this.welcomePanel = welcomePanel;
+	}
+
+	public JMenuItem getFQA() {
+		return FQA;
+	}
+
+	public void setFQA(JMenuItem fQA) {
+		FQA = fQA;
+	}
 } 
 
+@SuppressWarnings("serial")
 class ImagePane1 extends JPanel{
 	
 	private Image img;
@@ -191,8 +220,8 @@ class ImagePane1 extends JPanel{
 		
  
 
+	@SuppressWarnings("unused")
 	private JMenuBar menuBar() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }	

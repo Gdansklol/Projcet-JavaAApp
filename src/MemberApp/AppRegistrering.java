@@ -1,75 +1,87 @@
-package frame;
+package MemberApp;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
-
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
-import javax.swing.JTextArea;
-import javax.swing.JComboBox;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
-public class Registrering1 {
+import com.sun.tools.javadoc.Main;
 
+@SuppressWarnings("removal")
+public class AppRegistrering {
+	
 	private JFrame frame;
-	private Object menuBar;
-	private Component openFile;
-	private Component exit;
 	private JTextField name;
 	private JTextField age;
 	private JTextField adress;
 	private JTextField phone;
 	private JTextField birthday;
 	private JTextField occupation;
+	/**
+	 * @param args
+	 * @Launch the application.
+	 */
+	public static void main(String[] args){
+		
+		EventQueue.invokeLater(new Runnable() {
+
+			public void run() {
+
+				try {
+					AppRegistrering window = new AppRegistrering();
+					
+					window.frame.setVisible(true);
+
+				} catch (Exception e) {
+
+					e.printStackTrace();
+
+				}
+
+			}
+
+		});
+
+	}
+	
 
 	/**
 	 * Launch the application.
+	 * 
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Registrering1 window = new Registrering1();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	
+		
 	/**
 	 * Create the application.
 	 */
-	public Registrering1() {
+	 
+	public  AppRegistrering() {
 		initialize();
-	}
+	 }
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	 private void initialize() {
 		frame = new JFrame();
 		frame.setSize( 930, 608);
-		frame.setLocationRelativeTo(null);//frame plceras i mitten
+		frame.setLocationRelativeTo(null);//frame placeras i mitten
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		//frame.getContentPane().setLayout(null);
 		
 		JPanel RegistrerigKunder = new JPanel();
 		RegistrerigKunder.setForeground(Color.BLACK);
@@ -139,7 +151,7 @@ public class Registrering1 {
 		adress = new JTextField();
 		adress.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		adress.setColumns(10);
-		adress.setBounds(224, 349, 200, 71);
+	    adress.setBounds(224, 349, 200, 71);
 		RegistrerigKunder.add(adress);
 		
 		phone = new JTextField();
@@ -151,7 +163,7 @@ public class Registrering1 {
 		birthday = new JTextField();
 		birthday.setFont(new Font("Tahoma", Font.PLAIN, 22));
 		birthday.setColumns(10);
-		birthday.setBounds(603, 192, 200, 47);
+	    birthday.setBounds(603, 192, 200, 47);
 		RegistrerigKunder.add(birthday);
 		
 		occupation = new JTextField();
@@ -166,6 +178,7 @@ public class Registrering1 {
 		RegistrerigKunder.add(note);
 		
 		//String array för comboBOx,bästämda värde som han eller hon
+		@SuppressWarnings({ "rawtypes", "unchecked" })
 		JComboBox gender = new JComboBox(new String[]{"Male","Female"});
 		gender.setBackground(Color.WHITE);
 		gender.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -180,37 +193,30 @@ public class Registrering1 {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-                // String värde sätter i  varje variabelt värde.
+				// String värde sätter i varje variabelt värde.
 				String nameTxt = name.getText();
-                 String ageTxt = age.getText();
-                 String phoneTxt = phone.getText();
-                 String occupationTxt = occupation.getText();
-                 String birthxt = birthday.getText();
-                 String noteTxt = note.getText();
-                 String genderTxt = gender.getSelectedItem().toString();
+
+                String ageTxt = age.getText();
+
+                String phoneTxt = phone.getText();
+
+                String occupationTxt = occupation.getText();
+
+                String birthxt = birthday.getText();
+
+                String noteTxt = note.getText();
+
+                String genderTxt = gender.getSelectedItem().toString();
+
 			}
-	    	
-       });
- 
-       
-class ImagePane1 extends JPanel{
+
+      });
+				
+			}
+
+	 }
+
+
+
 	
-	private Image img;
-	
-	public void ImagePanel (Image img) {
-	 this.img=img;// ska byta funkionen av JPanel,kan använda image utanför
-	 setSize(new Dimension(img.getWidth(null),img.getHeight(null)));
-	 
-	 setLayout(null);
-	 
-	}
-
-
-    public void paintComponent(Graphics g) {
-        g.drawImage(img, 0, 0, null);
-	     }
-
-       }       
-	 }      
-        
-   }
+  
