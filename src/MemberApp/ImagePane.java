@@ -1,9 +1,14 @@
 package MemberApp;
-
+//Provides classes for creating and modifying images.
 import java.awt.Image;
 
 public class ImagePane {
-
+	/**
+	 * ${tags}
+	 */
+	/**
+	 * @param args
+	 */
 	public ImagePane(Image image) {
 		
 		// TODO Auto-generated constructor stub
@@ -25,3 +30,4 @@ public class ImagePane {
 	}
 
 }
+
